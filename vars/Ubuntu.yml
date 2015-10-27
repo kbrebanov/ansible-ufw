@@ -1,0 +1,5 @@
+---
+# vars file for ufw (Ubuntu specific)
+
+ufw_packages:
+  - ufw

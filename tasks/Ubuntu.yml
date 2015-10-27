@@ -1,0 +1,7 @@
+---
+# tasks file for ufw (Ubuntu specific)
+
+- name: Install ufw packages
+  apt: name={{ ufw_packages }} state=present update_cache=yes
+  with_items: ufw_packages
+  tags: ufw

@@ -1,2 +1,40 @@
 ---
 # tasks file for ufw
+
+- name: Set ufw IPv6
+  lineinfile: >
+    dest=/etc/default/ufw
+    regexp='^IPV6='
+    line="IPV6={{ ufw_ipv6 }}"
+    state=present
+  notify: reload ufw
+  tags: ufw
+
+- name: Set ufw logging
+  ufw: logging={{ ufw_logging }}
+  tags: ufw
+
+- name: Set incoming policy
+  ufw: policy={{ ufw_incoming_policy }} direction=incoming
+  tags: ufw
+
+- name: Set ougoing policy
+  ufw: policy={{ ufw_outgoing_policy }} direction=outgoing
+  tags: ufw
+
+- name: Set routed policy
+  ufw: policy={{ ufw_routed_policy }} direction=routed
+  tags: ufw
+
+- name: Configure ufw rules
+  ufw: >
+    rule={{ item.rule }}
+    proto={{ item.proto }}
+    src={{ item.src }}
+    to_port={{ item.to_port }}
+  with_items: ufw_rules
+  tags: ufw
+
+- name: Enable ufw
+  ufw: state=enabled
+  tags: ufw
