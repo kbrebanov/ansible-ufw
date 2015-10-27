@@ -1,6 +1,8 @@
 ufw
 ===
 
+[![Ansible Role](https://img.shields.io/ansible/role/5733.svg)](https://galaxy.ansible.com/list#/roles/5733)
+
 Installs and configures ufw
 
 Requirements
