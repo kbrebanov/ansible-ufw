@@ -28,10 +28,10 @@
 
 - name: Configure ufw rules
   ufw: >
-    rule={{ item.rule }}
-    proto={{ item.proto }}
-    src={{ item.src }}
-    to_port={{ item.to_port }}
+    rule={{ item.rule|default("allow") }}
+    proto={{ item.proto|default(omit) }}
+    src={{ item.src|default(omit) }}
+    to_port={{ item.to_port|default(omit) }}
   with_items: ufw_rules
   tags: ufw
 
