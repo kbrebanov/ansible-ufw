@@ -2,5 +2,7 @@
 # handlers file for ufw
 
 - name: reload ufw
+  become: yes
   command: ufw reload
-  tags: ufw
+  tags:
+    - ufw
