@@ -1,7 +1,7 @@
 ufw
 ===
 
-[![Ansible Role](https://img.shields.io/ansible/role/5733.svg)](https://galaxy.ansible.com/list#/roles/5733)
+[![Build Status](https://travis-ci.org/kbrebanov/ansible-ufw.svg?branch=master)](https://travis-ci.org/kbrebanov/ansible-ufw)
 
 Installs and configures ufw
 
