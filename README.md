@@ -8,13 +8,13 @@ Installs and configures ufw
 Requirements
 ------------
 
-This role requires Ansible 1.6 or higher.
+This role requires Ansible 1.9 or higher.
 
 Role Variables
 --------------
 
 | Name                | Default                                                  | Description                                         |
-|---------------------|----------------------------------------------------------|-----------------------------------------------------|
+|:--------------------|:---------------------------------------------------------|:----------------------------------------------------|
 | ufw_incoming_policy | "deny"                                                   | Set default incoming policy (allow, deny or reject) |
 | ufw_ipv6            | "yes"                                                    | Enable or disable support for IPv6                  |
 | ufw_logging         | "off"                                                    | Enable or disable logging                           |
